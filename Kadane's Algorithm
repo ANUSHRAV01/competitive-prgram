@@ -1,0 +1,45 @@
+class Solution{
+    public:
+    // arr: input array
+    // n: size of array
+    //Function to find the sum of contiguous subarray with maximum sum.
+    long long maxSubarraySum(int arr[], int n){
+        
+        // Your code here
+        int res =arr[0];
+        int max_s =arr[0];
+        for(int i=1;i<n;i++){
+            max_s = max(max_s+arr[i],arr[i]);
+            res=max(res,max_s);
+        }
+        return res;
+    }
+};
+
+
+
+INTUITION WHILE I WAS IMPLEMENTING
+ /*// Your code here
+        int max=INT_MIN;
+        long long sum =0;
+        for(int i=0;i<n;i++){
+            if(arr[i]>max){//arr[i] element is greater than the max max element
+                max =arr[i];// max element aa gaya hai
+            }
+        }
+        for(int i=0;i<n;i++){//max element tek add kar raha hai
+            if(arr[i]<max){
+                sum += arr[i];
+            }
+        }
+        return sum;
+                // Your code here
+        long long sum[n];
+        for(int i=0;i<n;i++){
+            sum[i]=sum[i-1]+arr[i];// prefix sum approach
+        */
+  
+        
+
+
+

@@ -20,3 +20,83 @@ vector<int> find(int arr[], int n , int x )
 
 // another approach of solving by binary search worst time complexity(OlogN)
 
+//
+#include<bits/stdc++.h>
+using namespace std;
+
+vector<int> find(int a[], int n , int x )
+{
+    // code here
+    // FIND FOR THE FIRST OCCURENCE
+     int start=0;
+
+    int end =n-1;
+
+    int index1=-1;
+
+    int index2=-1;
+
+    vector<int>v;
+
+    while(start<=end){
+
+        int mid=start+(end-start)/2;
+
+        if(x==a[mid]){
+
+            index2=mid;
+
+            start=mid+1;
+
+            
+
+        }else if(x<a[mid]){
+
+            end=mid-1;
+
+        }else{
+
+            start=mid+1;
+
+        }
+
+    }
+    // FIND FOR THE LAST OCCURENCE
+    start=0;
+
+    end =n-1;
+
+    while(start<=end){
+
+        int mid=start+(end-start)/2;
+
+        if(x==a[mid]){
+
+            index1=mid;
+
+            end=mid-1;
+
+            
+
+        }else if(x<a[mid]){
+
+            end=mid-1;
+
+        }else{
+
+            start=mid+1;
+
+        }
+
+    } 
+
+    v.push_back(index1);
+
+    v.push_back(index2);
+
+    return v;
+    
+}
+
+
+

@@ -1,0 +1,22 @@
+vector<int> find(int arr[], int n , int x )
+{
+    // code here
+    //this is a approach with basic iterative way
+    int ans=-1;
+    int index=-1;
+    for(int i=0;i<n;i++){
+        if(arr[i] ==x and ans==-1){
+            ans =i;
+            index =i;
+        }
+        else if(arr[i] ==x) index=i;
+        
+    }
+    vector<int> v;
+    v.push_back(ans);
+    v.push_back(index);
+    return v;
+}
+
+// another approach of solving by binary search worst time complexity(OlogN)
+

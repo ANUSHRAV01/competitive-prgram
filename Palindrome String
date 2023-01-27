@@ -1,0 +1,21 @@
+class Solution{
+public:	
+	
+	
+	int isPalindrome(string s)
+	{
+	    // Your code goes here
+	    if(s.length()==1) return 1;
+	    
+	    int a=0,e=s.size()-1;
+	    while(a<=e){
+	        if(s[a]!=s[e]){
+	            return 0;
+	        }
+	        a++,e--;
+	    }
+	   return 1;
+	    
+	}
+
+};

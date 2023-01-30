@@ -1,0 +1,29 @@
+class Solution {
+public:
+    int minimumCardPickup(vector<int>& s) {
+        int max1=INT_MAX;
+        unordered_map<int,int>mp;
+        int n=s.size();
+        for(int i=0;i<n;i++){
+            if(mp.find(s[i]) !=mp.end() ) max1=min(max1,i-mp[s[i]]+1);
+            mp[s[i]] =i;
+        }
+        if(max1 ==INT_MAX) return -1;
+        return max1;
+    }
+};
+
+
+// here we are covering two important concepts that are said to be:-
+hashmaps where in unordered_map is works in O(1) time complexity
+and as we have to use the string.find which is very important to understand
+
+string find in C++
+String find is used to find the first occurrence of sub-string in the specified string being called upon.
+It returns the index of the first occurrence of the substring in the string from given starting position. 
+The default value of starting position is 0.
+
+
+The hashmap is used to store the elements of the input vector "s" as keys and their indices as values. The purpose of this is to keep track of the elements in the input vector and their last position in the vector.
+
+The approach of this question is to find the length of the smallest subarray of the input vector that contains all the distinct elements. The length of the subarray is calculated by finding the difference between the current position of an element and its previous position stored in the hashmap. The minimum length of the subarray is returned as the result.
